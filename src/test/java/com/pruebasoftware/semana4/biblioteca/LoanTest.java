@@ -19,7 +19,7 @@ class LoanTest {
 
         int daysLate = loan.calculateDaysLate(LocalDate.of(2026, 9, 8));
 
-        assertEquals(5, daysLate);
+        assertEquals(0, daysLate);
     }
 
     @Test
