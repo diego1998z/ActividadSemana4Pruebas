@@ -10,6 +10,15 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class OrderTest {
     @Test
+    void subtotalMultipliesUnitPriceByQuantity() {
+        OrderItem item = new OrderItem("Cuaderno", 4, new BigDecimal("5.50"));
+
+        BigDecimal subtotal = item.subtotal();
+
+        assertEquals(0, new BigDecimal("50.00").compareTo(subtotal));
+    }
+
+    @Test
     void totalAddsAllItemSubtotals() {
         Order order = new Order(
                 "order-1",
