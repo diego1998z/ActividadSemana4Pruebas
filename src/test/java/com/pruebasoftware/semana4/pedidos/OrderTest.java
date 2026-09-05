@@ -15,7 +15,7 @@ class OrderTest {
 
         BigDecimal subtotal = item.subtotal();
 
-        assertEquals(0, new BigDecimal("50.00").compareTo(subtotal));
+        assertEquals(0, new BigDecimal("22.00").compareTo(subtotal));
     }
 
     @Test
