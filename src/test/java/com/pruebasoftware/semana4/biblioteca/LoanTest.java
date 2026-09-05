@@ -8,6 +8,21 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class LoanTest {
     @Test
+    void calculateDaysLateReturnsZeroWhenBookIsReturnedBeforeDueDate() {
+        Loan loan = new Loan(
+                "loan-0",
+                "Effective Java",
+                "Lucia Ramos",
+                LocalDate.of(2026, 9, 1),
+                LocalDate.of(2026, 9, 10)
+        );
+
+        int daysLate = loan.calculateDaysLate(LocalDate.of(2026, 9, 8));
+
+        assertEquals(5, daysLate);
+    }
+
+    @Test
     void calculateDaysLateReturnsZeroWhenBookIsReturnedOnDueDate() {
         Loan loan = new Loan(
                 "loan-1",
